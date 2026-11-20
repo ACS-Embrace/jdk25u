@@ -26,6 +26,10 @@
 #undef  _LARGEFILE64_SOURCE
 #define _LARGEFILE64_SOURCE 1
 
+/* Android: pipe2 is only declared with _GNU_SOURCE in bionic. */
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
 #include "jni.h"
 #include "jvm.h"
 #include "jvm_md.h"
